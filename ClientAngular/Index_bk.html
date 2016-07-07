@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="ClientAngularApp">
+ <!-- this tell Angular to run -->
+<head>
+    <title>Angular + WebAPI</title>
+
+    <script src="scripts/jquery-1.9.0.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <!--<script src="scripts/controller/app.js"></script>-->
+    <script src="scripts/app/controllers.js"></script>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#/movies">
+                        Movies
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" ng-controller="MoviesController">
+        <h1 ng-bind="appTitile"></h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>CustomerID</th>
+                    <th>EmployeeID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="movie in movies">
+                    <td><span ng-bind="movie.CustomerID"></span></td>
+                    <td><span ng-bind="movie.EmployeeID"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

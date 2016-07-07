@@ -1,0 +1,92 @@
+﻿<div ng-controller="ListController" class="container">
+    <div class="span6">
+        <h2>Products</h2>
+        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" ng-click="create()">Create</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Supplier ID</th>
+                    <th>Category ID</th>
+                    <th>Quantity Per Unit</th>
+                    <th>Unit Price</th>
+                    <th>Units In Stock</th>
+                    <th>Units On Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Product in Products">
+                    <td>
+                        <a href="#/details/{{Product.ProductID}}" class="btn">{{Product.ProductName}}</a>
+                    </td>
+                    <td>
+                        {{Product.SupplierID}}
+                    </td>
+                    <td>
+                        {{Product.CategoryID}}
+                    </td>
+                    <td>
+                        {{Product.QuantityPerUnit}}
+                    </td>
+                    <td>
+                        {{Product.UnitPrice}}
+                    </td>
+                    <td>
+                        {{Product.UnitsInStock}}
+                    </td>
+                    <td>
+                        {{Product.UnitsOnOrder}}
+                    </td>
+                    <td>
+                        <button class="btn" ng-click="delete(Product)">Delete</button>
+                        <!--<a href="#/details/{{Product.ProductID}}" class="btn">Details</a>-->
+                        <button type="button" ng-click="getProduct(Product)" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+                            Details
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{{Product.ProductName}}</h4>
+                </div>
+                <div class="modal-body">
+                    <fieldset ng-hide="isEditable()">
+                        <div>Quantity / Unit: {{Product.QuantityPerUnit}}</div>
+                        <div>Unit Price: {{Product.UnitPrice}}</div>
+                        <button class="btn" ng-click="edit()">Edit</button>
+                    </fieldset>
+
+                    <fieldset ng-show="isEditable()">
+                        <label for="title">
+                            Product Name
+                        </label>
+                        <input id="title" type="text" ng-model="edit.Product.ProductName" />
+                        <label for="release">
+                            Quantity / Unit
+                        </label>
+                        <input id="release" type="text" ng-model="edit.Product.QuantityPerUnit" />
+                        <label for="runtime">
+                            Unit Price
+                        </label>
+                        <input id="runtime" type="number" ng-model="edit.Product.UnitPrice" />
+                    </fieldset>
+                </div>
+                
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Close</button>
+                    <button type="button" class="btn btn-primary" ng-show="isEditable()" ng-click="save()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

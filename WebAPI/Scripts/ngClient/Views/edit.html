@@ -1,0 +1,20 @@
+﻿<fieldset ng-show="isEditable()">
+    <div>
+        <label for="title">
+            Product Name
+        </label>
+        <input id="title" type="text" ng-model="edit.Product.ProductName" />
+    </div>
+    <div>
+        <label for="release">
+            Quantity / Unit
+        </label>
+        <input id="release" type="text" ng-model="edit.Product.QuantityPerUnit" />
+    </div>
+    <div>
+        <label for="runtime">
+            Unit Price
+        </label>
+        <input id="runtime" type="number" ng-model="edit.Product.UnitPrice" />
+    </div>
+</fieldset>

@@ -1,0 +1,55 @@
+﻿<div ng-controller="ListController" class="container">
+    <div class="span6">
+        <h2>Products</h2>
+        <button class="btn" ng-click="create()">Create</button>
+        <div ng-include="'/Scripts/ngClient/views/edit.html'"></div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Supplier ID</th>
+                    <th>Category ID</th>
+                    <th>Quantity Per Unit</th>
+                    <th>Unit Price</th>
+                    <th>Units In Stock</th>
+                    <th>Units On Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Product in Products">
+                    <td>
+                        <a href="#/details/{{Product.ProductID}}" class="btn">{{Product.ProductName}}</a>
+                    </td>
+                    <td>
+                        {{Product.SupplierID}}
+                    </td>
+                    <td>
+                        {{Product.CategoryID}}
+                    </td>
+                    <td>
+                        {{Product.QuantityPerUnit}}
+                    </td>
+                    <td>
+                        {{Product.UnitPrice}}
+                    </td>
+                    <td>
+                        {{Product.UnitsInStock}}
+                    </td>
+                    <td>
+                        {{Product.UnitsOnOrder}}
+                    </td>
+                    <td>
+                        <button class="btn" ng-click="delete(Product)">Delete</button>
+                        <a href="#/details/{{Product.ProductID}}" class="btn">Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="span6">
+        <div>
+            
+        </div>
+    </div>
+</div>

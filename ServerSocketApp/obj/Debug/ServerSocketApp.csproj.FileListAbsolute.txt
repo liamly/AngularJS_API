@@ -1,0 +1,9 @@
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\obj\Debug\ServerSocketApp.Form1.resources
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\obj\Debug\ServerSocketApp.Properties.Resources.resources
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\obj\Debug\ServerSocketApp.csproj.GenerateResource.Cache
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\bin\Debug\ServerSocketApp.exe.config
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\bin\Debug\ServerSocketApp.exe
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\bin\Debug\ServerSocketApp.pdb
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\obj\Debug\ServerSocketApp.exe
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\obj\Debug\ServerSocketApp.pdb
+F:\My stuffs\SVN\AngularJS_API\ServerSocketApp\obj\Debug\ServerSocketApp.csprojResolveAssemblyReference.cache
